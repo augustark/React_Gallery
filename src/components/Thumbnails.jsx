@@ -1,8 +1,9 @@
 import images from "../images";
 
-export default function Thumbnails({ handleClick, setCurrent }) {
+export default function Thumbnails({ handleClick, setBlur }) {
   const handleBlur = (e) => {
-    setCurrent("");
+    // setCurrent("");
+    setBlur(true)
   };
 
   return (

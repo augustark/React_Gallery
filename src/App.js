@@ -5,15 +5,17 @@ import { useState } from "react";
 
 export default function App() {
   const [current, setCurrent] = useState("");
+  const [blur, setBlur] = useState(false)
 
   const handleClick = (e) => {
     setCurrent(e.target.currentSrc);
+    setBlur(false)
   };
 
   return (
     <div className="App">
-      <Thumbnails handleClick={handleClick} setCurrent={setCurrent} />
-      <Gallery current={current} setCurrent={setCurrent} />
+      <Thumbnails handleClick={handleClick} setBlur={setBlur} />
+      {current && <Gallery current={current} blur={blur} />}
     </div>
   );
 }
